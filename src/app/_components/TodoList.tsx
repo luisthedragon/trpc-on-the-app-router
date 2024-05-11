@@ -31,7 +31,12 @@ export default function TodoList({
     <div>
       <div className="text-black my-5 text-3xl">
         {getTodos?.data?.map((todo) => (
-          <div key={todo.id} className="flex gap-3 items-center">
+          <div
+            key={todo.id}
+            className={`flex gap-3 items-center ${
+              !!todo.done ? "" : "line-through"
+            }`}
+          >
             <input
               id={`check-${todo.id}`}
               type="checkbox"
